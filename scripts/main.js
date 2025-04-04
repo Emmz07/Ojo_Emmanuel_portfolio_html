@@ -67,3 +67,41 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
+// Function to handle fade-in animations on scroll
+function handleScrollAnimations() {
+  const elements = document.querySelectorAll('.animate-fade-in');
+
+  elements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Check if the element is in the viewport
+      if (rect.top <= windowHeight - 100) {
+          element.classList.add('visible');
+      }
+  });
+}
+
+// Run the function on scroll and on page load
+window.addEventListener('scroll', handleScrollAnimations);
+window.addEventListener('load', handleScrollAnimations);
+
+// Function to handle animations on scroll
+function animateSectionsOnScroll() {
+  const sections = document.querySelectorAll('.section-animate');
+
+  sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Check if the section is in the viewport
+      if (rect.top <= windowHeight - 100) {
+          section.classList.add('visible');
+      }
+  });
+}
+
+// Run the function on scroll and on page load
+window.addEventListener('scroll', animateSectionsOnScroll);
+window.addEventListener('load', animateSectionsOnScroll);
